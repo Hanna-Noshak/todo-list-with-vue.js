@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+  list-style: none;
+}
+
+/*  VARIABLES : */
+:root {
+  --primaryColor: ; /* fixed invalid color */
+  --secondaryColor: #ede9fe;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --secondayGrey:#ccc;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --mainRed: #db2777;
+  --bodyColor: #f6f6f6;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--mainBlack);
+  background-color: var(--bodyColor);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-inline: 1rem;
+  width: 100%;
+  max-width: 640px;
+}
+
+.form-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.todo-container {
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+form {
+  flex: 1;
+  background-color: var(--mainWhite);
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  border:2px solid var(--secondayGrey);
+  overflow: hidden;
+}
+
+form input {
+  flex: 1;
+  font-weight: bold;
+}
+
+form input,
+form button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 0.75rem 0.75rem;
+}
+
+form button {
+  color: var(--primaryColor);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+form button:hover {
+  background-color: var(--primaryColor);
+  color: var(--mainGrey);
+}
+
+.todolist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.todo {
+  background-color: var(--mainWhite);
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+  display: flex;
+}
+
+.todo .todo__title {
+  color: var(--primaryColor);
+  font-weight: bold;
+  flex: 1;
+  margin-inline-end: 0.5rem;
+  word-break: break-word;
+}
+
+.todo button {
+  display: block;
+  font-size: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.fa-trash-alt {
+  color: var(--mainRed);
+}
+
+.fa-check-square {
+  color: var(--primaryColor);
+}
+
+/* Completed state styles */
+.todo--completed .fa-check-square {
+  color: #16a34a; /* green for completed */
+}
+
+.todo--completed .todo__title {
+  color: #16a34a;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+select {
+  appearance: none;
+  border: none;
+  outline: none;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  color: var(--primaryColor);
+  background: transparent;
+  font-weight: bold;
+  font-size: medium;
+  cursor: pointer;
+}
+
+
+
+.select {
+  margin-inline-start: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  width: 10rem;
+  position: relative;
+  border: 2px solid var(--secondayGrey);
+  font-weight: bold;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  
+}
+
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  padding: 1rem;
+  color: var(--primaryColor);
+  pointer-events: none;
+}
+
+button{
+  border: none;
+  outline: 0;
+}
+
+button > i {
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .select {
+    width: 8.5rem;
+  }
+} 
